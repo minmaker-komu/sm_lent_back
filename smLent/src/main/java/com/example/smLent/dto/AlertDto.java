@@ -1,20 +1,27 @@
 package com.example.smLent.dto;
 
 import com.example.smLent.domain.AlertStatus;
+import java.time.LocalDateTime;
 
 public class AlertDto {
+
     private Long id;
     private Long itemId;
     private Long lenderId;
     private Long borrowerId;
     private AlertStatus status;
+    private LocalDateTime createdAt;
 
-    public AlertDto(Long id, Long itemId, Long lenderId, Long borrowerId, AlertStatus status) {
+    // 기본 생성자
+    public AlertDto() {}
+
+    public AlertDto(Long id, Long itemId, Long lenderId, Long borrowerId, AlertStatus status, LocalDateTime createdAt) {
         this.id = id;
         this.itemId = itemId;
         this.lenderId = lenderId;
         this.borrowerId = borrowerId;
         this.status = status;
+        this.createdAt = createdAt;
     }
 
     public Long getId() {
@@ -57,5 +64,14 @@ public class AlertDto {
         this.status = status;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     // Getters and Setters
+    // ...
 }

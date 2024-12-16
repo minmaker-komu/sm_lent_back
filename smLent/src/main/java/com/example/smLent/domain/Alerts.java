@@ -24,6 +24,7 @@ public class Alerts {
     @JoinColumn(name = "user_B_fk", referencedColumnName = "id")
     private Member borrower; // 빌리는 사람 (FK)
 
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, columnDefinition = "ENUM('승인', '거절', '대기') DEFAULT '대기'")
     private AlertStatus status; // 상태 (승인, 거절, 대기)
